@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://century21continental-liz.com.mx/sitemap.xml
