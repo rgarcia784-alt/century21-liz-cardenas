@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="EcIBfG4OJWGvntrtOQbUTarAmAGA7PU1ni5OYRsPpJc" />
-<title>Liz Cárdenas · Century 21 Continental | Venta y Renta en Guadalajara y Zapopan</title>
-<meta name="description" content="Liz Cárdenas, asesora inmobiliaria de Century 21 Continental en Guadalajara. Vende, renta o compra casa o departamento en Zapopan y la ZMG. Opinión de valor. Tel. 333 482 7892.">
+<title>Vende o renta tu propiedad en Guadalajara | Liz Cárdenas</title>
+<meta name="description" content="Liz Cárdenas, asesora de Century 21 Continental: vende, renta o compra casa o departamento en Guadalajara y Zapopan. Opinión de valor. 333 482 7892.">
 <meta name="author" content="Liz Cárdenas – Century 21 Continental">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="geo.region" content="MX-JAL">
@@ -146,7 +146,7 @@
      }
     ]
    },
-   "dateModified": "2026-09-23"
+   "dateModified": "2026-10-07"
   },
   {
    "@type": "Person",
@@ -187,7 +187,7 @@
     "@id": "https://century21continental-liz.com.mx/#agente"
    },
    "inLanguage": "es-MX",
-   "dateModified": "2026-09-23"
+   "dateModified": "2026-10-07"
   },
   {
    "@type": "SingleFamilyResidence",
@@ -1257,7 +1257,7 @@
     letter-spacing: -0.02em;
   }
 
-  .why-card h4 {
+  .why-card h3 {
     font-size: 0.88rem;
     font-weight: 700;
     color: var(--text-dark);
@@ -1382,7 +1382,7 @@
 
   /* ── MOBILE FONT OVERRIDES ── */
   .why-card p { font-size: 1.1rem !important; color: #1C1C1A !important; font-weight: 500 !important; }
-  .why-card h4 { font-size: 1.1rem !important; color: #1C1C1A !important; }
+  .why-card h3 { font-size: 1.1rem !important; color: #1C1C1A !important; }
   .form-note { font-size: 0.95rem !important; color: #2E2E2C !important; }
   .footer-info { font-size: 0.95rem !important; color: #1C1C1A !important; }
   .footer-links a { font-size: 0.95rem !important; color: #3A3A38 !important; }
@@ -1425,12 +1425,26 @@
   .prop-type:hover { background: var(--cream-dark); }
   .prop-type.is-on { background: var(--black); color: var(--gold); border-color: var(--black); }
   .prop-type:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  /* ── FAQ con <details> ── */
+  .faq-item { background: #fff; border-radius: 6px; margin-bottom: 8px; overflow: hidden; border: 0.5px solid #E5E0D8; }
+  .faq-item summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 20px; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: "+"; font-size: 18px; color: #B89230; flex-shrink: 0; }
+  .faq-item[open] summary::after { content: "–"; }
+  .faq-item summary:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+  .faq-q { margin: 0; font-family: 'Montserrat', Arial, sans-serif; font-size: 14px; font-weight: 600; color: #1C1C1A; line-height: 1.4; text-align: left; }
+  .faq-ans { font-size: 15px; color: #1C1C1A; line-height: 1.8; padding: 0 20px 18px; }
+  /* ── Enlace para saltar al contenido ── */
+  .skip-link { position: absolute; left: -999px; top: 0; background: #1C1C1A; color: #fff; padding: 10px 16px; z-index: 200; font-weight: 600; }
+  .skip-link:focus { left: 8px; top: 8px; }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+<nav aria-label="Principal">
   <div class="nav-logo"><a href="https://century21continental-liz.com.mx/">
     <img src="data:image/jpeg;base64,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" alt="Logo Century 21 Continental – Liz Cárdenas, asesora inmobiliaria en Guadalajara" width="46" height="46"></a></div>
   <div class="nav-right">
@@ -1438,6 +1452,7 @@
     <a href="https://wa.me/523334827892?text=Hola%20Liz,%20vi%20tu%20página%20y%20me%20interesa%20información%20sobre%20propiedades" class="nav-cta" target="_blank" rel="noopener noreferrer">Contactar →</a>
   </div>
 </nav>
+<main id="contenido">
 
 <!-- HERO -->
 <section class="hero">
@@ -1448,7 +1463,7 @@
         <span>Asesor profesional · Guadalajara, Jalisco</span>
       </div>
       <h1 class="hero-title">Vende o renta tu propiedad<br>en Guadalajara y Zapopan hoy.</h1>
-      <span class="hero-title-name">Liz Cárdenas · Century 21 Continental</span>
+      <span class="hero-title-name">Liz Cárdenas – Century 21 Continental</span>
       <p class="hero-sub">
         Con el respaldo de la red inmobiliaria más grande del mundo, te ayudo a vender, rentar o comprar propiedades en Guadalajara, Zapopan y toda la zona metropolitana. Atención personalizada desde el primer contacto hasta el cierre.
       </p>
@@ -1575,91 +1590,91 @@
     </div>
     <p class="prop-count" id="propCount" aria-live="polite">Mostrando 13 propiedades</p>
     <div class="service-card prop-card" data-op="venta" data-type="casa" style="max-width:640px;margin:0 auto;text-align:left">
-      <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/ppS7elY9/uploads/156/propiedades/592002/68bb162ccec2a.jpg" alt="Casa en venta en Las Cañadas, Zapopan, frente a campo de golf – Coto Noria" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
+      <figure style="margin:0 0 16px"><img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/ppS7elY9/uploads/156/propiedades/592002/68bb162ccec2a.jpg" alt="Casa en venta en Las Cañadas, Zapopan, frente a campo de golf – Coto Noria" width="640" height="427" style="width:100%;height:auto;border-radius:8px;display:block" loading="lazy"><figcaption style="font-size:0.9rem;color:#2E2E2C;margin-top:6px">Casa en venta en Las Cañadas, Zapopan, frente a campo de golf – Coto Noria</figcaption></figure>
       <h3>Casa frente a campo de golf · $10,300,000 MXN</h3>
       <p>Privada Puente Viejo (Coto Noria) 48, Las Cañadas, Zapopan. Sala, comedor, cocina integral con desayunador, terraza con jardín y hermosa vista al campo de golf. 3 recámaras (la principal con balcón, baño completo y vestidor), 2 baños completos, medio baño, cuarto de servicio y 2 estacionamientos. Terreno 581 m², construcción 280 m².</p>
       <a href="https://century21mexico.com/propiedad/592002_casa-en-venta-en-las-canadas-zapopan/asesor_13444-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
     <div class="service-card prop-card" data-op="venta" data-type="terreno" id="terreno-los-cajetes" style="max-width:640px;margin:24px auto 0;text-align:left">
-      <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/vVgKmaxH/uploads/156/propiedades/464672/63334f09ee431.jpg" alt="Terreno en venta en Los Cajetes, Zapopan, con uso de suelo mixto (imagen representativa)" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
+      <figure style="margin:0 0 16px"><img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/vVgKmaxH/uploads/156/propiedades/464672/63334f09ee431.jpg" alt="Terreno en venta en Los Cajetes, Zapopan, con uso de suelo mixto (imagen representativa)" width="640" height="427" style="width:100%;height:auto;border-radius:8px;display:block" loading="lazy"><figcaption style="font-size:0.9rem;color:#2E2E2C;margin-top:6px">Terreno en venta en Los Cajetes, Zapopan, con uso de suelo mixto (imagen representativa)</figcaption></figure>
       <h3>Terreno de 27,865 m² con uso de suelo mixto · $56,000,000 MXN</h3>
       <p>San Antonio 40, Los Cajetes, Zapopan, Jalisco. Terreno ejidal irregular con uso de suelo habitacional, comercial e industrial, acceso para tráileres, y con drenaje, luz y agua. Cerca de Camino Real a Colima y López Mateos, a unos 10 minutos de Bugambilias. Según la ficha, está listo para legalizar y la primera escritura no genera ISR por ser ejidal. Imagen representativa.</p>
       <a href="https://century21mexico.com/propiedad/464672_terreno-en-venta-en-los-cajetes-zapopan/asesor_13444-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
     <div class="service-card prop-card" data-op="venta" data-type="departamento" id="loft-americana" style="max-width:640px;margin:24px auto 0;text-align:left">
-      <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/u3iq9kBN/uploads/156/propiedades/482986/63f9306ddb253.jpg" alt="Loft en venta en la Colonia Americana, Guadalajara, a tres cuadras de Chapultepec (imagen representativa)" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
+      <figure style="margin:0 0 16px"><img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/u3iq9kBN/uploads/156/propiedades/482986/63f9306ddb253.jpg" alt="Loft en venta en la Colonia Americana, Guadalajara, a tres cuadras de Chapultepec (imagen representativa)" width="640" height="427" style="width:100%;height:auto;border-radius:8px;display:block" loading="lazy"><figcaption style="font-size:0.9rem;color:#2E2E2C;margin-top:6px">Loft en venta en la Colonia Americana, Guadalajara, a tres cuadras de Chapultepec (imagen representativa)</figcaption></figure>
       <h3>Loft de estreno en Colonia Americana · $2,200,000 MXN</h3>
       <p>Morelos 1134 Int. 10, Americana, Guadalajara, Jalisco. Loft de estreno en primer piso, con aproximadamente 33.54 m² de construcción y balcón de 5 m² sin techar. Cuenta con elevador y está a tres cuadras de Chapultepec, cerca de cafés, restaurantes y tiendas. Las medidas son aproximadas, la propiedad está ocupada actualmente y las imágenes son representativas.</p>
       <a href="https://century21continental.com/propiedad/243183_departamento-en-venta-en-colonia-moderna-loft/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
     <div class="service-card prop-card" data-op="venta" data-type="departamento" id="departamento-centro-guadalajara" style="max-width:640px;margin:24px auto 0;text-align:left">
-      <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/Dr9ioexf/uploads/156/propiedades/617854/6a1f0935d4508.jpg" alt="Departamento remodelado en venta en el Centro Histórico de Guadalajara, cerca del Teatro Degollado" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
+      <figure style="margin:0 0 16px"><img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/Dr9ioexf/uploads/156/propiedades/617854/6a1f0935d4508.jpg" alt="Departamento remodelado en venta en el Centro Histórico de Guadalajara, cerca del Teatro Degollado" width="640" height="427" style="width:100%;height:auto;border-radius:8px;display:block" loading="lazy"><figcaption style="font-size:0.9rem;color:#2E2E2C;margin-top:6px">Departamento remodelado en venta en el Centro Histórico de Guadalajara, cerca del Teatro Degollado</figcaption></figure>
       <h3>Departamento remodelado en el Centro de Guadalajara · $3,150,000 MXN</h3>
       <p>Belén 221, interior 9, Centro, Guadalajara, Jalisco. Departamento recientemente remodelado, de 2 recámaras amplias y 1 baño completo, con sala-comedor, cocina integral con estufa nueva, dos balcones a la calle y área de lavado exclusiva con cuarto techado. Superficie de 72.30 m² según la ficha. A tres cuadras del Teatro Degollado y cinco de la Catedral, cerca de los mercados Corona, San Juan de Dios y Alcalde. También puede usarse como oficina o consultorio.</p>
       <a href="https://century21continental.com/propiedad/1151136_departamento-en-venta-en-centro-guadalajara/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
     <div class="service-card prop-card" data-op="venta" data-type="departamento" id="departamento-pinar-de-la-calma" style="max-width:640px;margin:24px auto 0;text-align:left">
-      <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/uswrUQmx/uploads/156/propiedades/632333/6ab2d9c5b7d16.jpg" alt="Departamento en venta en Pinar de la Calma, Zapopan, cerca del ITESO" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
+      <figure style="margin:0 0 16px"><img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/uswrUQmx/uploads/156/propiedades/632333/6ab2d9c5b7d16.jpg" alt="Departamento en venta en Pinar de la Calma, Zapopan, cerca del ITESO" width="640" height="427" style="width:100%;height:auto;border-radius:8px;display:block" loading="lazy"><figcaption style="font-size:0.9rem;color:#2E2E2C;margin-top:6px">Departamento en venta en Pinar de la Calma, Zapopan, cerca del ITESO</figcaption></figure>
       <h3>Departamento en Pinar de la Calma · $2,200,000 MXN</h3>
       <p>Malinalco 2836, Pinar de la Calma, Zapopan, Jalisco. Departamento en segundo nivel, de 1 recámara, 1 baño completo y 1 estacionamiento, con 43.84 m² según la ficha. Está en una zona residencial de alta demanda, a pocos minutos del ITESO y cerca de López Mateos, Periférico Sur y Camino Real a Colima, con plazas comerciales, supermercados, restaurantes, bancos y escuelas cerca. Ideal para vivir o como inversión para renta.</p>
       <a href="https://century21continental.com/propiedad/1243053_departamento-en-venta-en-pinar-de-la-calma-zapopan/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
     <div class="service-card prop-card" data-op="venta" data-type="departamento" id="departamento-el-roble-tateposco" style="max-width:640px;margin:24px auto 0;text-align:left">
-      <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/AQte95E3/uploads/156/propiedades/631296/6aa1c4177d25e.jpg" alt="Departamento en venta en el Residencial El Roble, Tateposco, Tlaquepaque" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
+      <figure style="margin:0 0 16px"><img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/AQte95E3/uploads/156/propiedades/631296/6aa1c4177d25e.jpg" alt="Departamento en venta en el Residencial El Roble, Tateposco, Tlaquepaque" width="640" height="427" style="width:100%;height:auto;border-radius:8px;display:block" loading="lazy"><figcaption style="font-size:0.9rem;color:#2E2E2C;margin-top:6px">Departamento en venta en el Residencial El Roble, Tateposco, Tlaquepaque</figcaption></figure>
       <h3>Departamento en El Roble, Tateposco · $1,180,000 MXN</h3>
       <p>El Roble 310, Edificio 10B, Int. 92 B, Tateposco, Tlaquepaque, Jalisco. Departamento en planta baja dentro del Residencial El Roble, con 2 recámaras, 1 baño completo, cocina integral, área de lavado y 1 cajón de estacionamiento. Superficie de 44.07 m² según la ficha y seis años de antigüedad. A dos minutos de la carretera a Zapotlanejo, para vivir o como inversión.</p>
       <a href="https://century21continental.com/propiedad/1236039_departamento-en-venta-en-el-roble-tateposco-tlaquepaque-jalisco/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
     <div class="service-card prop-card" data-op="venta" data-type="casa" id="casa-alta-california" style="max-width:640px;margin:24px auto 0;text-align:left">
-      <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/jUQB1K4g/uploads/156/propiedades/631120/6abd952ecb040.jpg" alt="Casa en venta en Alta California Residencial, Tlajomulco de Zúñiga" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
+      <figure style="margin:0 0 16px"><img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/jUQB1K4g/uploads/156/propiedades/631120/6abd952ecb040.jpg" alt="Casa en venta en Alta California Residencial, Tlajomulco de Zúñiga" width="640" height="427" style="width:100%;height:auto;border-radius:8px;display:block" loading="lazy"><figcaption style="font-size:0.9rem;color:#2E2E2C;margin-top:6px">Casa en venta en Alta California Residencial, Tlajomulco de Zúñiga</figcaption></figure>
       <h3>Casa en Alta California Residencial · $2,690,000 MXN</h3>
       <p>Boulevard Alta California 1201, int. 255, Alta California Residencial, Tlajomulco de Zúñiga, Jalisco. Casa de dos niveles con 3 recámaras y 2 estacionamientos, terreno de 123 m² y construcción de 96 m². Planta baja con sala, comedor, cocina integral, una recámara con baño completo, área de lavado y patio; planta alta con dos recámaras con closet y baño completo. Fraccionamiento con seguridad las 24 horas, caseta de guardia y casa club con terraza y juegos infantiles.</p>
       <a href="https://century21continental.com/propiedad/1235320_casa-en-venta-en-alta-california-tlajomulco-de-zuniga/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
     <div class="service-card prop-card" data-op="venta" data-type="casa" id="casa-campo-real-int-16" style="max-width:640px;margin:24px auto 0;text-align:left">
-      <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/JTzXEt5J/uploads/156/propiedades/602303/696167b5ea618.jpg" alt="Casa en venta en el coto de Campo Real, Zapopan" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
+      <figure style="margin:0 0 16px"><img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/JTzXEt5J/uploads/156/propiedades/602303/696167b5ea618.jpg" alt="Casa en venta en el coto de Campo Real, Zapopan" width="640" height="427" style="width:100%;height:auto;border-radius:8px;display:block" loading="lazy"><figcaption style="font-size:0.9rem;color:#2E2E2C;margin-top:6px">Casa en venta en el coto de Campo Real, Zapopan</figcaption></figure>
       <h3>Casa en coto en Campo Real · $1,840,000 MXN</h3>
       <p>Av. Campo Real Poniente 607, Int. 16, Campo Real, Zapopan, Jalisco. Casa en coto privado con acceso controlado, de 2 recámaras (cada una con baño completo en planta alta), medio baño, sala-comedor, cocina, cuarto de servicio, patio y cochera. A media cuadra de un parque peatonal con área para mascotas y a dos cuadras de la casa club con juegos infantiles, con tiendas de conveniencia cerca.</p>
       <a href="https://century21continental.com/propiedad/1067858_casa-en-venta-en-campo-real-zapopan/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
     <div class="service-card prop-card" data-op="venta" data-type="casa" id="casa-campo-real-int-15" style="max-width:640px;margin:24px auto 0;text-align:left">
-      <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/0tIoc7P5/uploads/156/propiedades/604269/69618bacba5fd.jpg" alt="Casa en esquina en venta en el coto Miura, Campo Real, Zapopan" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
+      <figure style="margin:0 0 16px"><img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/0tIoc7P5/uploads/156/propiedades/604269/69618bacba5fd.jpg" alt="Casa en esquina en venta en el coto Miura, Campo Real, Zapopan" width="640" height="427" style="width:100%;height:auto;border-radius:8px;display:block" loading="lazy"><figcaption style="font-size:0.9rem;color:#2E2E2C;margin-top:6px">Casa en esquina en venta en el coto Miura, Campo Real, Zapopan</figcaption></figure>
       <h3>Casa en esquina en Campo Real · $2,180,000 MXN</h3>
       <p>Av. Campo Real Poniente 607, Int. 15 (coto Miura), Campo Real, Zapopan, Jalisco. Casa en esquina dentro de un coto privado con acceso automatizado, con 3 recámaras, 2 baños completos (uno en cada recámara de planta alta), medio baño, sala-comedor, cocina, patio amplio y cochera. A media cuadra de un parque peatonal y a dos cuadras de la casa club, con tiendas cerca.</p>
       <a href="https://century21continental.com/propiedad/1068070_casa-en-venta-en-campo-real-zapopan/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
     <div class="service-card prop-card" data-op="venta" data-type="otro" id="inmueble-iguala-guerrero" style="max-width:640px;margin:24px auto 0;text-align:left">
-      <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/RT66UQIK/uploads/156/propiedades/501020/64af3f4618e93.jpg" alt="Inmueble con siete departamentos y local comercial en venta en Iguala, Guerrero (imagen representativa)" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
+      <figure style="margin:0 0 16px"><img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/RT66UQIK/uploads/156/propiedades/501020/64af3f4618e93.jpg" alt="Inmueble con siete departamentos y local comercial en venta en Iguala, Guerrero (imagen representativa)" width="640" height="427" style="width:100%;height:auto;border-radius:8px;display:block" loading="lazy"><figcaption style="font-size:0.9rem;color:#2E2E2C;margin-top:6px">Inmueble con siete departamentos y local comercial en venta en Iguala, Guerrero (imagen representativa)</figcaption></figure>
       <h3>Inversión: 7 departamentos y local en Iguala · $1,700,000 MXN</h3>
       <p>José María Morelos 27, Centro, Iguala de la Independencia, Guerrero. Inmueble para inversionistas con siete departamentos de una recámara con baño completo y un local comercial con medio baño. Las imágenes son representativas y el precio puede cambiar sin previo aviso.</p>
       <a href="https://century21continental.com/propiedad/454520_casa-en-venta-iguala-de-la-independencia-guerrero/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
     <div class="service-card prop-card" data-op="venta" data-type="casa" id="casa-el-sereno" style="max-width:640px;margin:24px auto 0;text-align:left">
-      <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/T6M1dGwD/uploads/156/propiedades/630986/6a9f1014a05b8.jpg" alt="Casa en esquina en venta en el fraccionamiento El Sereno, Tlaquepaque" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
+      <figure style="margin:0 0 16px"><img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/T6M1dGwD/uploads/156/propiedades/630986/6a9f1014a05b8.jpg" alt="Casa en esquina en venta en el fraccionamiento El Sereno, Tlaquepaque" width="640" height="427" style="width:100%;height:auto;border-radius:8px;display:block" loading="lazy"><figcaption style="font-size:0.9rem;color:#2E2E2C;margin-top:6px">Casa en esquina en venta en el fraccionamiento El Sereno, Tlaquepaque</figcaption></figure>
       <h3>Casa en esquina en El Sereno · $3,590,000 MXN</h3>
       <p>Campanilla 253, Int. 76 (prolongación Mariano Otero), El Sereno, Tlaquepaque, Jalisco. Casa en esquina dentro de un coto privado, con 3 recámaras (la principal con baño completo y vestidor), 2 baños completos, medio baño y 2 estacionamientos. Sala, comedor, cocina, patio de servicio y jardín interior. El coto cuenta con alberca climatizada, casa club y terraza; la casa tiene aljibe, tanque estacionario y agua de pozo.</p>
       <a href="https://century21continental.com/propiedad/1234518_casa-en-venta-en-el-fraccionamiento-el-sereno-tlaquepaque-jalisco/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
     <div class="service-card prop-card" data-op="venta" data-type="casa" id="casa-los-olivos-tlaquepaque" style="max-width:640px;margin:24px auto 0;text-align:left">
-      <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/r6jE7Cga/uploads/156/propiedades/631048/6aa853bb44237.jpg" alt="Casa de tres niveles en venta en el coto Geovillas, Los Olivos de Tlaquepaque" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
+      <figure style="margin:0 0 16px"><img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/r6jE7Cga/uploads/156/propiedades/631048/6aa853bb44237.jpg" alt="Casa de tres niveles en venta en el coto Geovillas, Los Olivos de Tlaquepaque" width="640" height="427" style="width:100%;height:auto;border-radius:8px;display:block" loading="lazy"><figcaption style="font-size:0.9rem;color:#2E2E2C;margin-top:6px">Casa de tres niveles en venta en el coto Geovillas, Los Olivos de Tlaquepaque</figcaption></figure>
       <h3>Casa de 3 niveles en Los Olivos · $3,300,000 MXN</h3>
       <p>Arroyo Seco (Geo Villas 1200), int. 24, Los Olivos de Tlaquepaque, Tlaquepaque, Jalisco. Casa de tres niveles, actualizada y en buen estado, con 4 recámaras, 2 baños completos y medio baño; terreno de 138 m² y construcción de 118 m². Baño principal con tina, aljibe, tinaco grande y tanque estacionario. En coto privado con vigilancia las 24 horas, alberca climatizada y salón de eventos, con acceso rápido a Periférico Sur, Av. Michel González y Prolongación 8 de Julio.</p>
       <a href="https://century21continental.com/propiedad/1238166_casa-en-venta-en-los-olivos-tlaquepaque/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
     <div class="service-card prop-card" data-op="venta" data-type="casa" id="casa-colonia-obrera" style="max-width:640px;margin:24px auto 0;text-align:left">
-      <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/2Mbg8RMP/uploads/156/propiedades/587461/688a771cbb2a4.jpg" alt="Casa de dos niveles en venta en la Colonia Obrera, Guadalajara, frente al Colegio Anáhuac" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
+      <figure style="margin:0 0 16px"><img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/2Mbg8RMP/uploads/156/propiedades/587461/688a771cbb2a4.jpg" alt="Casa de dos niveles en venta en la Colonia Obrera, Guadalajara, frente al Colegio Anáhuac" width="640" height="427" style="width:100%;height:auto;border-radius:8px;display:block" loading="lazy"><figcaption style="font-size:0.9rem;color:#2E2E2C;margin-top:6px">Casa de dos niveles en venta en la Colonia Obrera, Guadalajara, frente al Colegio Anáhuac</figcaption></figure>
       <h3>Casa de dos niveles en la Colonia Obrera · $4,200,000 MXN</h3>
       <p>Av. Revolución 1114, Col. Obrera, Guadalajara, Jalisco. Casa de dos niveles con 4 recámaras y 3 baños completos, con 217 de terreno y 153 de construcción según la ficha. Uso de suelo habitacional, aunque antes se rentaba como local comercial. Frente al Colegio Anáhuac y cerca de la salida al Periférico. Solo se aceptan recursos propios, sin financiamiento.</p>
       <a href="https://century21continental.com/propiedad/977411_casa-en-venta-col-obrera-guadalajara/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
@@ -1858,22 +1873,22 @@
     <div class="why-grid">
       <div class="why-card">
         <div class="why-num">C21</div>
-        <h4>Marca global</h4>
+        <h3>Marca global</h3>
         <p>Century 21 Continental está reconocida en más de 80 países con miles de asesores certificados.</p>
       </div>
       <div class="why-card">
         <div class="why-num">ZMG</div>
-        <h4>Mercado local</h4>
+        <h3>Mercado local</h3>
         <p>Conozco a fondo el mercado de Zapopan, Tlaquepaque y toda la zona metropolitana.</p>
       </div>
       <div class="why-card">
         <div class="why-num">360°</div>
-        <h4>Servicio completo</h4>
+        <h3>Servicio completo</h3>
         <p>Te acompaño desde la valuación hasta el cierre del contrato. Sin sorpresas ni letras chicas.</p>
       </div>
       <div class="why-card">
         <div class="why-num">+</div>
-        <h4>Red de compradores</h4>
+        <h3>Red de compradores</h3>
         <p>Tengo acceso a una base de clientes activos buscando propiedades en tu zona ahora mismo.</p>
       </div>
     </div>
@@ -1887,40 +1902,19 @@
     <h2 style="font-family:'Montserrat',Arial,sans-serif;font-size:26px;font-weight:700;color:#1C1C1A;margin-bottom:8px">Century 21 Continental · Guadalajara y Zapopan</h2>
     <p style="font-size:15px;color:#2E2E2C;line-height:1.75;margin-bottom:28px">Todo lo que necesitas saber sobre vender, rentar o comprar una propiedad con Liz Cárdenas, asesor profesional Century 21 Continental.</p>
 
-    <div class="faq-item" style="background:#fff;border-radius:6px;margin-bottom:8px;overflow:hidden;border:0.5px solid #E5E0D8">
-      <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:14px;font-weight:600;color:#1C1C1A;gap:12px;font-family:'Montserrat',Arial,sans-serif;line-height:1.4">¿Qué es Century 21 Continental en Guadalajara? <span class="faq-ico" style="font-size:18px;color:#B89230;flex-shrink:0;transition:transform .25s;display:inline-block">+</span></button>
-      <div class="faq-ans" style="display:none;font-size:15px;color:#1C1C1A;line-height:1.8;padding:0 20px 18px">Century 21 Continental es una de las franquicias inmobiliarias más reconocidas en Guadalajara y Zapopan, parte de la red Century 21 presente en más de 80 países. Liz Cárdenas es asesor profesional de esta oficina, con experiencia en venta y renta de propiedades en toda la ZMG.</div>
-    </div>
+    <details class="faq-item"><summary><h3 class="faq-q">¿Qué es Century 21 Continental en Guadalajara?</h3></summary><div class="faq-ans">Century 21 Continental es una de las franquicias inmobiliarias más reconocidas en Guadalajara y Zapopan, parte de la red Century 21 presente en más de 80 países. Liz Cárdenas es asesor profesional de esta oficina, con experiencia en venta y renta de propiedades en toda la ZMG.</div></details>
 
-    <div class="faq-item" style="background:#fff;border-radius:6px;margin-bottom:8px;overflow:hidden;border:0.5px solid #E5E0D8">
-      <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:14px;font-weight:600;color:#1C1C1A;gap:12px;font-family:'Montserrat',Arial,sans-serif;line-height:1.4">¿En qué zonas de Guadalajara y Zapopan trabaja Liz Cárdenas? <span class="faq-ico" style="font-size:18px;color:#B89230;flex-shrink:0;transition:transform .25s;display:inline-block">+</span></button>
-      <div class="faq-ans" style="display:none;font-size:15px;color:#1C1C1A;line-height:1.8;padding:0 20px 18px">Liz Cárdenas trabaja en toda la Zona Metropolitana de Guadalajara: Zapopan, Tlaquepaque, Tonalá y Tlajomulco. Tiene especial conocimiento en colonias como Puerta de Hierro, Chapalita, Providencia, Américas, Ciudad Granja, Santa Anita y Jardines del Bosque.</div>
-    </div>
+    <details class="faq-item"><summary><h3 class="faq-q">¿En qué zonas de Guadalajara y Zapopan trabaja Liz Cárdenas?</h3></summary><div class="faq-ans">Liz Cárdenas trabaja en toda la Zona Metropolitana de Guadalajara: Zapopan, Tlaquepaque, Tonalá y Tlajomulco. Tiene especial conocimiento en colonias como Puerta de Hierro, Chapalita, Providencia, Américas, Ciudad Granja, Santa Anita y Jardines del Bosque.</div></details>
 
-    <div class="faq-item" style="background:#fff;border-radius:6px;margin-bottom:8px;overflow:hidden;border:0.5px solid #E5E0D8">
-      <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:14px;font-weight:600;color:#1C1C1A;gap:12px;font-family:'Montserrat',Arial,sans-serif;line-height:1.4">¿Cómo vendo mi casa con Century 21 Continental? <span class="faq-ico" style="font-size:18px;color:#B89230;flex-shrink:0;transition:transform .25s;display:inline-block">+</span></button>
-      <div class="faq-ans" style="display:none;font-size:15px;color:#1C1C1A;line-height:1.8;padding:0 20px 18px">El proceso incluye: (1) Valuación profesional de tu propiedad, (2) Estrategia de precio y presentación, (3) Publicación en portales como Inmuebles24, Lamudi y la red C21, (4) Filtro y acompañamiento de prospectos, (5) Negociación y cierre. Todo con respaldo jurídico.</div>
-    </div>
+    <details class="faq-item"><summary><h3 class="faq-q">¿Cómo vendo mi casa con Century 21 Continental?</h3></summary><div class="faq-ans">El proceso incluye: (1) Valuación profesional de tu propiedad, (2) Estrategia de precio y presentación, (3) Publicación en portales como Inmuebles24, Lamudi y la red C21, (4) Filtro y acompañamiento de prospectos, (5) Negociación y cierre. Todo con respaldo jurídico.</div></details>
 
-    <div class="faq-item" style="background:#fff;border-radius:6px;margin-bottom:8px;overflow:hidden;border:0.5px solid #E5E0D8">
-      <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:14px;font-weight:600;color:#1C1C1A;gap:12px;font-family:'Montserrat',Arial,sans-serif;line-height:1.4">¿Cuánto cobra Century 21 por vender una propiedad en Guadalajara? <span class="faq-ico" style="font-size:18px;color:#B89230;flex-shrink:0;transition:transform .25s;display:inline-block">+</span></button>
-      <div class="faq-ans" style="display:none;font-size:15px;color:#1C1C1A;line-height:1.8;padding:0 20px 18px">La comisión varía según el tipo y valor de la propiedad. Liz Cárdenas te da una cotización personalizada. Contáctala al 333 482 7892 para conocer las condiciones específicas para tu inmueble.</div>
-    </div>
+    <details class="faq-item"><summary><h3 class="faq-q">¿Cuánto cobra Century 21 por vender una propiedad en Guadalajara?</h3></summary><div class="faq-ans">La comisión varía según el tipo y valor de la propiedad. Liz Cárdenas te da una cotización personalizada. Contáctala al 333 482 7892 para conocer las condiciones específicas para tu inmueble.</div></details>
 
-    <div class="faq-item" style="background:#fff;border-radius:6px;margin-bottom:8px;overflow:hidden;border:0.5px solid #E5E0D8">
-      <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:14px;font-weight:600;color:#1C1C1A;gap:12px;font-family:'Montserrat',Arial,sans-serif;line-height:1.4">¿Puedo rentar mi departamento o casa en Zapopan con Century 21? <span class="faq-ico" style="font-size:18px;color:#B89230;flex-shrink:0;transition:transform .25s;display:inline-block">+</span></button>
-      <div class="faq-ans" style="display:none;font-size:15px;color:#1C1C1A;line-height:1.8;padding:0 20px 18px">Sí. Liz Cárdenas gestiona rentas en Zapopan y Guadalajara: publica tu propiedad, filtra inquilinos, coordina visitas y te asesora en el contrato de arrendamiento. El objetivo es que encuentres un inquilino confiable en el menor tiempo posible.</div>
-    </div>
+    <details class="faq-item"><summary><h3 class="faq-q">¿Puedo rentar mi departamento o casa en Zapopan con Century 21?</h3></summary><div class="faq-ans">Sí. Liz Cárdenas gestiona rentas en Zapopan y Guadalajara: publica tu propiedad, filtra inquilinos, coordina visitas y te asesora en el contrato de arrendamiento. El objetivo es que encuentres un inquilino confiable en el menor tiempo posible.</div></details>
 
-    <div class="faq-item" style="background:#fff;border-radius:6px;margin-bottom:8px;overflow:hidden;border:0.5px solid #E5E0D8">
-      <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:14px;font-weight:600;color:#1C1C1A;gap:12px;font-family:'Montserrat',Arial,sans-serif;line-height:1.4">¿Cuánto vale mi propiedad en Guadalajara o Zapopan? <span class="faq-ico" style="font-size:18px;color:#B89230;flex-shrink:0;transition:transform .25s;display:inline-block">+</span></button>
-      <div class="faq-ans" style="display:none;font-size:15px;color:#1C1C1A;line-height:1.8;padding:0 20px 18px">El valor depende de la ubicación, tamaño, estado de conservación, amenidades y el comportamiento reciente del mercado en tu colonia. Liz Cárdenas te brinda una opinión de valor profesional, basada en análisis comparativo de mercado actualizado para Guadalajara y Zapopan.</div>
-    </div>
+    <details class="faq-item"><summary><h3 class="faq-q">¿Cuánto vale mi propiedad en Guadalajara o Zapopan?</h3></summary><div class="faq-ans">El valor depende de la ubicación, tamaño, estado de conservación, amenidades y el comportamiento reciente del mercado en tu colonia. Liz Cárdenas te brinda una opinión de valor profesional, basada en análisis comparativo de mercado actualizado para Guadalajara y Zapopan.</div></details>
 
-    <div class="faq-item" style="background:#fff;border-radius:6px;margin-bottom:8px;overflow:hidden;border:0.5px solid #E5E0D8">
-      <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:14px;font-weight:600;color:#1C1C1A;gap:12px;font-family:'Montserrat',Arial,sans-serif;line-height:1.4">¿Cómo contacto a Liz Cárdenas de Century 21 Continental? <span class="faq-ico" style="font-size:18px;color:#B89230;flex-shrink:0;transition:transform .25s;display:inline-block">+</span></button>
-      <div class="faq-ans" style="display:none;font-size:15px;color:#1C1C1A;line-height:1.8;padding:0 20px 18px">Puedes contactar a Liz Cárdenas directamente al 333 482 7892 por llamada o WhatsApp. También puedes llenar el formulario en esta página y ella te responderá en menos de 24 horas.</div>
-    </div>
+    <details class="faq-item"><summary><h3 class="faq-q">¿Cómo contacto a Liz Cárdenas de Century 21 Continental?</h3></summary><div class="faq-ans">Puedes contactar a Liz Cárdenas directamente al 333 482 7892 por llamada o WhatsApp. También puedes llenar el formulario en esta página y ella te responderá en menos de 24 horas.</div></details>
 
     <div style="text-align:center;margin-top:28px">
       <a href="https://wa.me/523334827892?text=Hola%20Liz,%20tengo%20una%20pregunta%20sobre%20propiedades%20en%20Guadalajara" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-size:12px;font-weight:700;padding:13px 26px;border-radius:4px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none">💬 ¿Otra pregunta? Escríbeme</a>
@@ -1938,6 +1932,16 @@
       renta y valuación de propiedades en la Zona Metropolitana de Guadalajara. Trabaja bajo el respaldo,
       capacitación y estándares de ética profesional de la red Century 21, presente en más de 80 países.
     </p>
+    <p class="byline" style="font-size:0.95rem;font-weight:600;margin-bottom:1rem;">Por <strong>Liz Cárdenas</strong>, asesora profesional de Century 21 Continental · Actualizado el <time datetime="2026-10-07">7 de octubre de 2026</time></p>
+    <p class="section-sub" style="max-width:100%;margin-bottom:1rem;">
+      Soy Liz Cárdenas y te acompaño en cada paso: desde la opinión de valor hasta la firma del contrato. Mi trabajo es que tomes decisiones con información clara sobre tu propiedad.
+    </p>
+    <ul style="font-size:1.05rem;line-height:1.9;padding-left:1.3rem;margin-bottom:1rem;">
+      <li>Venta de casas, departamentos y terrenos.</li>
+      <li>Renta con filtro de inquilinos y asesoría en el contrato de arrendamiento.</li>
+      <li>Búsqueda de propiedades según tu presupuesto y zona.</li>
+      <li>Opinión de valor con análisis comparativo del mercado.</li>
+    </ul>
   </div>
 </section>
 
@@ -2013,7 +2017,7 @@
 <section class="section" id="resumen" style="background: var(--cream-dark);">
   <div class="section-inner" style="max-width:760px;">
     <p class="section-kicker">En resumen</p>
-    <h2 class="section-title" style="font-size:1.6rem;">Puntos clave</h2>
+    <h2 class="section-title" style="font-size:1.6rem;">En conclusión: puntos clave</h2>
     <ol style="font-size:1rem;line-height:2;color:var(--text-dark);padding-left:1.3rem;">
       <li>Liz Cárdenas es asesor profesional de Century 21 Continental, con cobertura en Guadalajara, Zapopan, Tlaquepaque, Tonalá y Tlajomulco.</li>
       <li>Ofrece 4 servicios: venta, renta, búsqueda de propiedades y opinión de valor.</li>
@@ -2035,16 +2039,18 @@
   </div>
 </div>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">
     <img src="data:image/jpeg;base64,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" alt="Century 21 Continental" width="36" height="36" style="height:36px;width:auto;">
   </div>
   <div class="footer-info">
-    <strong>Liz Cárdenas · Century 21 Continental</strong><br>
+    <strong>Liz Cárdenas – Century 21 Continental</strong><br>
     Asesor profesional · 333 482 7892<br>
     <address style="font-style:normal">Av. Paseo de la Arboleda 886-A, Jardines del Bosque, 44520 Guadalajara, Jalisco</address>
-    Página actualizada: <time datetime="2026-09-23">septiembre 2026</time>
+    Página actualizada: <time datetime="2026-10-07">octubre 2026</time>
   </div>
   <div class="footer-links">
     <a href="tel:3334827892">Llamar</a>
@@ -2055,17 +2061,6 @@
     <a href="#legal">Aviso de Privacidad</a>
   </div>
 </footer>
-
-<script>
-  function toggleFaq(btn){
-    var ans=btn.nextElementSibling;
-    var ico=btn.querySelector('.faq-ico');
-    var isOpen=ans.style.display==='block';
-    document.querySelectorAll('.faq-ans').forEach(function(el){el.style.display='none'});
-    document.querySelectorAll('.faq-ico').forEach(function(el){el.style.transform='';el.textContent='+'});
-    if(!isOpen){ans.style.display='block';ico.style.transform='rotate(45deg)';ico.textContent='+';}
-  }
-</script>
 
 <script>
   document.getElementById('contactForm').addEventListener('submit', function(e) {
