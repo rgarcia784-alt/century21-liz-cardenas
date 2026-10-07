@@ -1403,6 +1403,28 @@
   #zonas .service-card { padding: 1.75rem 1.4rem; }
   @media (max-width: 1100px) { #zonas .services-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 600px) { #zonas .services-grid { grid-template-columns: 1fr; } }
+
+  /* ── BUSCADOR DE PROPIEDADES ── */
+  .prop-card[hidden], .prop-empty[hidden] { display: none; }
+  .prop-search { max-width: 640px; margin: 0 auto 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: stretch; }
+  .prop-tabs { display: flex; border: 1px solid var(--border-dark); background: var(--white); }
+  .prop-tab { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--white); color: var(--text-dark); border: none; padding: 12px 18px; cursor: pointer; transition: background 0.2s, color 0.2s; }
+  .prop-tab + .prop-tab { border-left: 1px solid var(--border-dark); }
+  .prop-tab:hover { background: var(--cream-dark); }
+  .prop-tab.is-on { background: var(--black); color: var(--gold); }
+  .prop-tab:focus-visible, .prop-query:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .prop-query { flex: 1 1 220px; min-width: 0; font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 500; color: var(--text-dark); background: var(--white); border: 1px solid var(--border-dark); border-bottom: 2px solid var(--border-dark); padding: 12px 14px; }
+  .prop-query:focus { border-color: var(--gold); }
+  .prop-count { max-width: 640px; margin: 0 auto 0.5rem; font-size: 0.95rem; font-weight: 600; color: var(--text-mid); }
+  .prop-empty { max-width: 640px; margin: 24px auto 0; padding: 1.5rem; background: var(--white); border: 1px solid var(--border-dark); border-left: 3px solid var(--gold); text-align: left; }
+  .prop-empty p { font-size: 1.05rem; line-height: 1.7; font-weight: 500; margin-bottom: 1rem; }
+  .prop-all { max-width: 640px; margin: 2rem auto 0; text-align: center; }
+
+  .prop-types { max-width: 640px; margin: 0 auto 0.75rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .prop-type { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--text-dark); background: var(--white); border: 1px solid var(--border-dark); padding: 9px 14px; cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+  .prop-type:hover { background: var(--cream-dark); }
+  .prop-type.is-on { background: var(--black); color: var(--gold); border-color: var(--black); }
+  .prop-type:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 </style>
 </head>
 <body>
@@ -1532,96 +1554,126 @@
 <section class="section" id="destacada">
   <div class="section-inner">
     <p class="section-kicker">Propiedades destacadas</p>
-    <h2 class="section-title">Propiedades en venta<br>con Liz Cárdenas</h2>
-    <div class="service-card" style="max-width:640px;margin:0 auto;text-align:left">
+    <h2 class="section-title">Propiedades<br>con Liz Cárdenas</h2>
+
+    <div class="prop-search" role="search" aria-label="Buscar propiedades">
+      <div class="prop-tabs" role="group" aria-label="Tipo de operación">
+        <button type="button" class="prop-tab is-on" data-filter="todas" aria-pressed="true">Todas</button>
+        <button type="button" class="prop-tab" data-filter="venta" aria-pressed="false">Venta</button>
+        <button type="button" class="prop-tab" data-filter="renta" aria-pressed="false">Renta</button>
+      </div>
+      <input type="search" id="propQuery" class="prop-query" placeholder="Zona o tipo: Zapopan, casa, departamento…" aria-label="Buscar por zona o tipo de propiedad" autocomplete="off">
+    </div>
+    <div class="prop-types" role="group" aria-label="Tipo de propiedad">
+      <button type="button" class="prop-type is-on" data-type="todos" aria-pressed="true">Todos los tipos</button>
+      <button type="button" class="prop-type" data-type="casa" aria-pressed="false">Casa</button>
+      <button type="button" class="prop-type" data-type="departamento" aria-pressed="false">Departamento</button>
+      <button type="button" class="prop-type" data-type="terreno" aria-pressed="false">Terreno</button>
+      <button type="button" class="prop-type" data-type="local" aria-pressed="false">Local</button>
+      <button type="button" class="prop-type" data-type="bodega" aria-pressed="false">Bodega</button>
+      <button type="button" class="prop-type" data-type="otro" aria-pressed="false">Otro</button>
+    </div>
+    <p class="prop-count" id="propCount" aria-live="polite">Mostrando 13 propiedades</p>
+    <div class="service-card prop-card" data-op="venta" data-type="casa" style="max-width:640px;margin:0 auto;text-align:left">
       <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/ppS7elY9/uploads/156/propiedades/592002/68bb162ccec2a.jpg" alt="Casa en venta en Las Cañadas, Zapopan, frente a campo de golf – Coto Noria" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
       <h3>Casa frente a campo de golf · $10,300,000 MXN</h3>
       <p>Privada Puente Viejo (Coto Noria) 48, Las Cañadas, Zapopan. Sala, comedor, cocina integral con desayunador, terraza con jardín y hermosa vista al campo de golf. 3 recámaras (la principal con balcón, baño completo y vestidor), 2 baños completos, medio baño, cuarto de servicio y 2 estacionamientos. Terreno 581 m², construcción 280 m².</p>
       <a href="https://century21mexico.com/propiedad/592002_casa-en-venta-en-las-canadas-zapopan/asesor_13444-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
-    <div class="service-card" id="terreno-los-cajetes" style="max-width:640px;margin:24px auto 0;text-align:left">
+    <div class="service-card prop-card" data-op="venta" data-type="terreno" id="terreno-los-cajetes" style="max-width:640px;margin:24px auto 0;text-align:left">
       <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/vVgKmaxH/uploads/156/propiedades/464672/63334f09ee431.jpg" alt="Terreno en venta en Los Cajetes, Zapopan, con uso de suelo mixto (imagen representativa)" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
       <h3>Terreno de 27,865 m² con uso de suelo mixto · $56,000,000 MXN</h3>
       <p>San Antonio 40, Los Cajetes, Zapopan, Jalisco. Terreno ejidal irregular con uso de suelo habitacional, comercial e industrial, acceso para tráileres, y con drenaje, luz y agua. Cerca de Camino Real a Colima y López Mateos, a unos 10 minutos de Bugambilias. Según la ficha, está listo para legalizar y la primera escritura no genera ISR por ser ejidal. Imagen representativa.</p>
       <a href="https://century21mexico.com/propiedad/464672_terreno-en-venta-en-los-cajetes-zapopan/asesor_13444-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
-    <div class="service-card" id="loft-americana" style="max-width:640px;margin:24px auto 0;text-align:left">
+    <div class="service-card prop-card" data-op="venta" data-type="departamento" id="loft-americana" style="max-width:640px;margin:24px auto 0;text-align:left">
       <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/u3iq9kBN/uploads/156/propiedades/482986/63f9306ddb253.jpg" alt="Loft en venta en la Colonia Americana, Guadalajara, a tres cuadras de Chapultepec (imagen representativa)" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
       <h3>Loft de estreno en Colonia Americana · $2,200,000 MXN</h3>
       <p>Morelos 1134 Int. 10, Americana, Guadalajara, Jalisco. Loft de estreno en primer piso, con aproximadamente 33.54 m² de construcción y balcón de 5 m² sin techar. Cuenta con elevador y está a tres cuadras de Chapultepec, cerca de cafés, restaurantes y tiendas. Las medidas son aproximadas, la propiedad está ocupada actualmente y las imágenes son representativas.</p>
       <a href="https://century21continental.com/propiedad/243183_departamento-en-venta-en-colonia-moderna-loft/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
-    <div class="service-card" id="departamento-centro-guadalajara" style="max-width:640px;margin:24px auto 0;text-align:left">
+    <div class="service-card prop-card" data-op="venta" data-type="departamento" id="departamento-centro-guadalajara" style="max-width:640px;margin:24px auto 0;text-align:left">
       <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/Dr9ioexf/uploads/156/propiedades/617854/6a1f0935d4508.jpg" alt="Departamento remodelado en venta en el Centro Histórico de Guadalajara, cerca del Teatro Degollado" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
       <h3>Departamento remodelado en el Centro de Guadalajara · $3,150,000 MXN</h3>
       <p>Belén 221, interior 9, Centro, Guadalajara, Jalisco. Departamento recientemente remodelado, de 2 recámaras amplias y 1 baño completo, con sala-comedor, cocina integral con estufa nueva, dos balcones a la calle y área de lavado exclusiva con cuarto techado. Superficie de 72.30 m² según la ficha. A tres cuadras del Teatro Degollado y cinco de la Catedral, cerca de los mercados Corona, San Juan de Dios y Alcalde. También puede usarse como oficina o consultorio.</p>
       <a href="https://century21continental.com/propiedad/1151136_departamento-en-venta-en-centro-guadalajara/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
-    <div class="service-card" id="departamento-pinar-de-la-calma" style="max-width:640px;margin:24px auto 0;text-align:left">
+    <div class="service-card prop-card" data-op="venta" data-type="departamento" id="departamento-pinar-de-la-calma" style="max-width:640px;margin:24px auto 0;text-align:left">
       <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/uswrUQmx/uploads/156/propiedades/632333/6ab2d9c5b7d16.jpg" alt="Departamento en venta en Pinar de la Calma, Zapopan, cerca del ITESO" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
       <h3>Departamento en Pinar de la Calma · $2,200,000 MXN</h3>
       <p>Malinalco 2836, Pinar de la Calma, Zapopan, Jalisco. Departamento en segundo nivel, de 1 recámara, 1 baño completo y 1 estacionamiento, con 43.84 m² según la ficha. Está en una zona residencial de alta demanda, a pocos minutos del ITESO y cerca de López Mateos, Periférico Sur y Camino Real a Colima, con plazas comerciales, supermercados, restaurantes, bancos y escuelas cerca. Ideal para vivir o como inversión para renta.</p>
       <a href="https://century21continental.com/propiedad/1243053_departamento-en-venta-en-pinar-de-la-calma-zapopan/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
-    <div class="service-card" id="departamento-el-roble-tateposco" style="max-width:640px;margin:24px auto 0;text-align:left">
+    <div class="service-card prop-card" data-op="venta" data-type="departamento" id="departamento-el-roble-tateposco" style="max-width:640px;margin:24px auto 0;text-align:left">
       <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/AQte95E3/uploads/156/propiedades/631296/6aa1c4177d25e.jpg" alt="Departamento en venta en el Residencial El Roble, Tateposco, Tlaquepaque" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
       <h3>Departamento en El Roble, Tateposco · $1,180,000 MXN</h3>
       <p>El Roble 310, Edificio 10B, Int. 92 B, Tateposco, Tlaquepaque, Jalisco. Departamento en planta baja dentro del Residencial El Roble, con 2 recámaras, 1 baño completo, cocina integral, área de lavado y 1 cajón de estacionamiento. Superficie de 44.07 m² según la ficha y seis años de antigüedad. A dos minutos de la carretera a Zapotlanejo, para vivir o como inversión.</p>
       <a href="https://century21continental.com/propiedad/1236039_departamento-en-venta-en-el-roble-tateposco-tlaquepaque-jalisco/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
-    <div class="service-card" id="casa-alta-california" style="max-width:640px;margin:24px auto 0;text-align:left">
+    <div class="service-card prop-card" data-op="venta" data-type="casa" id="casa-alta-california" style="max-width:640px;margin:24px auto 0;text-align:left">
       <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/jUQB1K4g/uploads/156/propiedades/631120/6abd952ecb040.jpg" alt="Casa en venta en Alta California Residencial, Tlajomulco de Zúñiga" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
       <h3>Casa en Alta California Residencial · $2,690,000 MXN</h3>
       <p>Boulevard Alta California 1201, int. 255, Alta California Residencial, Tlajomulco de Zúñiga, Jalisco. Casa de dos niveles con 3 recámaras y 2 estacionamientos, terreno de 123 m² y construcción de 96 m². Planta baja con sala, comedor, cocina integral, una recámara con baño completo, área de lavado y patio; planta alta con dos recámaras con closet y baño completo. Fraccionamiento con seguridad las 24 horas, caseta de guardia y casa club con terraza y juegos infantiles.</p>
       <a href="https://century21continental.com/propiedad/1235320_casa-en-venta-en-alta-california-tlajomulco-de-zuniga/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
-    <div class="service-card" id="casa-campo-real-int-16" style="max-width:640px;margin:24px auto 0;text-align:left">
+    <div class="service-card prop-card" data-op="venta" data-type="casa" id="casa-campo-real-int-16" style="max-width:640px;margin:24px auto 0;text-align:left">
       <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/JTzXEt5J/uploads/156/propiedades/602303/696167b5ea618.jpg" alt="Casa en venta en el coto de Campo Real, Zapopan" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
       <h3>Casa en coto en Campo Real · $1,840,000 MXN</h3>
       <p>Av. Campo Real Poniente 607, Int. 16, Campo Real, Zapopan, Jalisco. Casa en coto privado con acceso controlado, de 2 recámaras (cada una con baño completo en planta alta), medio baño, sala-comedor, cocina, cuarto de servicio, patio y cochera. A media cuadra de un parque peatonal con área para mascotas y a dos cuadras de la casa club con juegos infantiles, con tiendas de conveniencia cerca.</p>
       <a href="https://century21continental.com/propiedad/1067858_casa-en-venta-en-campo-real-zapopan/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
-    <div class="service-card" id="casa-campo-real-int-15" style="max-width:640px;margin:24px auto 0;text-align:left">
+    <div class="service-card prop-card" data-op="venta" data-type="casa" id="casa-campo-real-int-15" style="max-width:640px;margin:24px auto 0;text-align:left">
       <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/0tIoc7P5/uploads/156/propiedades/604269/69618bacba5fd.jpg" alt="Casa en esquina en venta en el coto Miura, Campo Real, Zapopan" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
       <h3>Casa en esquina en Campo Real · $2,180,000 MXN</h3>
       <p>Av. Campo Real Poniente 607, Int. 15 (coto Miura), Campo Real, Zapopan, Jalisco. Casa en esquina dentro de un coto privado con acceso automatizado, con 3 recámaras, 2 baños completos (uno en cada recámara de planta alta), medio baño, sala-comedor, cocina, patio amplio y cochera. A media cuadra de un parque peatonal y a dos cuadras de la casa club, con tiendas cerca.</p>
       <a href="https://century21continental.com/propiedad/1068070_casa-en-venta-en-campo-real-zapopan/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
-    <div class="service-card" id="inmueble-iguala-guerrero" style="max-width:640px;margin:24px auto 0;text-align:left">
+    <div class="service-card prop-card" data-op="venta" data-type="otro" id="inmueble-iguala-guerrero" style="max-width:640px;margin:24px auto 0;text-align:left">
       <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/RT66UQIK/uploads/156/propiedades/501020/64af3f4618e93.jpg" alt="Inmueble con siete departamentos y local comercial en venta en Iguala, Guerrero (imagen representativa)" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
       <h3>Inversión: 7 departamentos y local en Iguala · $1,700,000 MXN</h3>
       <p>José María Morelos 27, Centro, Iguala de la Independencia, Guerrero. Inmueble para inversionistas con siete departamentos de una recámara con baño completo y un local comercial con medio baño. Las imágenes son representativas y el precio puede cambiar sin previo aviso.</p>
       <a href="https://century21continental.com/propiedad/454520_casa-en-venta-iguala-de-la-independencia-guerrero/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
-    <div class="service-card" id="casa-el-sereno" style="max-width:640px;margin:24px auto 0;text-align:left">
+    <div class="service-card prop-card" data-op="venta" data-type="casa" id="casa-el-sereno" style="max-width:640px;margin:24px auto 0;text-align:left">
       <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/T6M1dGwD/uploads/156/propiedades/630986/6a9f1014a05b8.jpg" alt="Casa en esquina en venta en el fraccionamiento El Sereno, Tlaquepaque" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
       <h3>Casa en esquina en El Sereno · $3,590,000 MXN</h3>
       <p>Campanilla 253, Int. 76 (prolongación Mariano Otero), El Sereno, Tlaquepaque, Jalisco. Casa en esquina dentro de un coto privado, con 3 recámaras (la principal con baño completo y vestidor), 2 baños completos, medio baño y 2 estacionamientos. Sala, comedor, cocina, patio de servicio y jardín interior. El coto cuenta con alberca climatizada, casa club y terraza; la casa tiene aljibe, tanque estacionario y agua de pozo.</p>
       <a href="https://century21continental.com/propiedad/1234518_casa-en-venta-en-el-fraccionamiento-el-sereno-tlaquepaque-jalisco/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
-    <div class="service-card" id="casa-los-olivos-tlaquepaque" style="max-width:640px;margin:24px auto 0;text-align:left">
+    <div class="service-card prop-card" data-op="venta" data-type="casa" id="casa-los-olivos-tlaquepaque" style="max-width:640px;margin:24px auto 0;text-align:left">
       <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/r6jE7Cga/uploads/156/propiedades/631048/6aa853bb44237.jpg" alt="Casa de tres niveles en venta en el coto Geovillas, Los Olivos de Tlaquepaque" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
       <h3>Casa de 3 niveles en Los Olivos · $3,300,000 MXN</h3>
       <p>Arroyo Seco (Geo Villas 1200), int. 24, Los Olivos de Tlaquepaque, Tlaquepaque, Jalisco. Casa de tres niveles, actualizada y en buen estado, con 4 recámaras, 2 baños completos y medio baño; terreno de 138 m² y construcción de 118 m². Baño principal con tina, aljibe, tinaco grande y tanque estacionario. En coto privado con vigilancia las 24 horas, alberca climatizada y salón de eventos, con acceso rápido a Periférico Sur, Av. Michel González y Prolongación 8 de Julio.</p>
       <a href="https://century21continental.com/propiedad/1238166_casa-en-venta-en-los-olivos-tlaquepaque/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
     </div>
 
-    <div class="service-card" id="casa-colonia-obrera" style="max-width:640px;margin:24px auto 0;text-align:left">
+    <div class="service-card prop-card" data-op="venta" data-type="casa" id="casa-colonia-obrera" style="max-width:640px;margin:24px auto 0;text-align:left">
       <img src="https://cdn.21online.lat/mexico/cache/awsTest1/rc/2Mbg8RMP/uploads/156/propiedades/587461/688a771cbb2a4.jpg" alt="Casa de dos niveles en venta en la Colonia Obrera, Guadalajara, frente al Colegio Anáhuac" width="640" height="427" style="width:100%;height:auto;border-radius:8px;margin-bottom:16px" loading="lazy">
       <h3>Casa de dos niveles en la Colonia Obrera · $4,200,000 MXN</h3>
       <p>Av. Revolución 1114, Col. Obrera, Guadalajara, Jalisco. Casa de dos niveles con 4 recámaras y 3 baños completos, con 217 de terreno y 153 de construcción según la ficha. Uso de suelo habitacional, aunque antes se rentaba como local comercial. Frente al Colegio Anáhuac y cerca de la salida al Periférico. Solo se aceptan recursos propios, sin financiamiento.</p>
       <a href="https://century21continental.com/propiedad/977411_casa-en-venta-col-obrera-guadalajara/asesor_2151-lizbeth-cardenas-plaza_local/" class="svc-link" target="_blank" rel="noopener noreferrer">Ver ficha completa →</a>
+    </div>
+    <div class="prop-empty" id="propEmpty" hidden>
+      <p id="propEmptyText">No encontré propiedades con ese filtro.</p>
+      <a id="propEmptyWa" class="btn-wa" href="https://wa.me/523334827892?text=Hola%20Liz,%20busco%20una%20propiedad" target="_blank" rel="noopener noreferrer">💬 Pregúntale a Liz</a>
+    </div>
+
+    <div class="prop-all">
+      <a href="https://century21continental.com/v/asesor/2151-lizbeth-cardenas-plaza/" class="btn-gold" target="_blank" rel="noopener noreferrer">
+        Ver todas las propiedades
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -1638,61 +1690,61 @@
       <div class="service-card">
         <h3>Providencia</h3>
         <p>Zona de alta demanda, cercana a los corredores corporativos de la ciudad.</p>
-        <a href="/rentar-casa-providencia.html" class="svc-link">Rentar en Providencia →</a>
+        <a href="https://century21continental-liz.com.mx/rentar-casa-providencia.html" class="svc-link">Rentar en Providencia →</a>
       </div>
 
       <div class="service-card">
         <h3>Valle Real</h3>
         <p>Una de las zonas residenciales más buscadas de Zapopan.</p>
-        <a href="/rentar-casa-valle-real.html" class="svc-link">Rentar en Valle Real →</a>
+        <a href="https://century21continental-liz.com.mx/rentar-casa-valle-real.html" class="svc-link">Rentar en Valle Real →</a>
       </div>
 
       <div class="service-card">
         <h3>Puerta de Hierro</h3>
         <p>Zona premium de Zapopan con gran plusvalía y demanda constante.</p>
-        <a href="/rentar-casa-puerta-de-hierro.html" class="svc-link">Rentar en Puerta de Hierro →</a>
+        <a href="https://century21continental-liz.com.mx/rentar-casa-puerta-de-hierro.html" class="svc-link">Rentar en Puerta de Hierro →</a>
       </div>
 
       <div class="service-card">
         <h3>Ciudad Granja</h3>
         <p>Zona residencial consolidada de Zapopan, cerca de zonas comerciales.</p>
-        <a href="/rentar-casa-ciudad-granja.html" class="svc-link">Rentar en Ciudad Granja →</a>
+        <a href="https://century21continental-liz.com.mx/rentar-casa-ciudad-granja.html" class="svc-link">Rentar en Ciudad Granja →</a>
       </div>
 
       <div class="service-card">
         <h3>Colonia Americana</h3>
         <p>Zona icónica de la ciudad, con gran demanda de renta entre profesionales.</p>
-        <a href="/rentar-casa-colonia-americana.html" class="svc-link">Rentar en Colonia Americana →</a>
+        <a href="https://century21continental-liz.com.mx/rentar-casa-colonia-americana.html" class="svc-link">Rentar en Colonia Americana →</a>
       </div>
 
       <div class="service-card">
         <h3>Santa Margarita</h3>
         <p>Zona residencial de Zapopan con cotos y buena demanda de familias.</p>
-        <a href="/rentar-casa-santa-margarita.html" class="svc-link">Rentar en Santa Margarita →</a>
+        <a href="https://century21continental-liz.com.mx/rentar-casa-santa-margarita.html" class="svc-link">Rentar en Santa Margarita →</a>
       </div>
 
       <div class="service-card">
         <h3>Jardines del Valle</h3>
         <p>Zona familiar de Zapopan, con casas en cotos y departamentos.</p>
-        <a href="/rentar-casa-jardines-del-valle.html" class="svc-link">Rentar en Jardines del Valle →</a>
+        <a href="https://century21continental-liz.com.mx/rentar-casa-jardines-del-valle.html" class="svc-link">Rentar en Jardines del Valle →</a>
       </div>
 
       <div class="service-card">
         <h3>Jardines del Bosque</h3>
         <p>Colonia consolidada de Guadalajara, donde está nuestra oficina.</p>
-        <a href="/rentar-casa-jardines-del-bosque.html" class="svc-link">Rentar en Jardines del Bosque →</a>
+        <a href="https://century21continental-liz.com.mx/rentar-casa-jardines-del-bosque.html" class="svc-link">Rentar en Jardines del Bosque →</a>
       </div>
 
       <div class="service-card">
         <h3>Solares Residencial</h3>
         <p>Desarrollo de Zapopan con cotos privados y amenidades.</p>
-        <a href="/rentar-casa-solares-residencial.html" class="svc-link">Rentar en Solares Residencial →</a>
+        <a href="https://century21continental-liz.com.mx/rentar-casa-solares-residencial.html" class="svc-link">Rentar en Solares Residencial →</a>
       </div>
 
       <div class="service-card">
         <h3>Zapopan (general)</h3>
         <p>Cobertura completa en todo el municipio de Zapopan.</p>
-        <a href="/rentar-propiedad-zapopan.html" class="svc-link">Rentar en Zapopan →</a>
+        <a href="https://century21continental-liz.com.mx/rentar-propiedad-zapopan.html" class="svc-link">Rentar en Zapopan →</a>
       </div>
     </div>
   </div>
@@ -2038,5 +2090,68 @@
   });
 </script>
 
+
+<script>
+  (function () {
+    var cards = Array.prototype.slice.call(document.querySelectorAll('#destacada .prop-card'));
+    var opTabs = Array.prototype.slice.call(document.querySelectorAll('.prop-tab'));
+    var typeTabs = Array.prototype.slice.call(document.querySelectorAll('.prop-type'));
+    var q = document.getElementById('propQuery');
+    var count = document.getElementById('propCount');
+    var empty = document.getElementById('propEmpty');
+    var emptyText = document.getElementById('propEmptyText');
+    var emptyWa = document.getElementById('propEmptyWa');
+    if (!cards.length || !q) return;
+    var op = 'todas';
+    var type = 'todos';
+    var typeLabel = { casa: 'casas', departamento: 'departamentos', terreno: 'terrenos', local: 'locales', bodega: 'bodegas', otro: 'otras propiedades' };
+
+    function norm(s) {
+      return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    }
+    var texts = cards.map(function (c) { return norm(c.textContent); });
+
+    function apply() {
+      try {
+      var terms = norm(q.value).split(/\s+/).filter(Boolean);
+      var shown = 0;
+      cards.forEach(function (c, i) {
+        var okOp = (op === 'todas') || (c.getAttribute('data-op') === op);
+        var okType = (type === 'todos') || (c.getAttribute('data-type') === type);
+        var okQ = terms.every(function (t) { return texts[i].indexOf(t) !== -1; });
+        var show = okOp && okType && okQ;
+        c.hidden = !show;
+        if (show) shown++;
+      });
+      count.textContent = shown === 1 ? 'Mostrando 1 propiedad' : 'Mostrando ' + shown + ' propiedades';
+      empty.hidden = shown !== 0;
+      if (shown === 0) {
+        var what = (type === 'todos' ? 'propiedades' : typeLabel[type]) + (op === 'renta' ? ' en renta' : (op === 'venta' ? ' en venta' : ''));
+        var extra = q.value.trim() ? ' con “' + q.value.trim() + '”' : '';
+        emptyText.textContent = 'Por ahora no hay ' + what + extra + ' publicadas en esta página. Cuéntale a Liz qué buscas y te ayuda a encontrarla.';
+        var msg = 'Hola Liz, busco ' + what + (q.value.trim() ? ' (' + q.value.trim() + ')' : '');
+        emptyWa.href = 'https://wa.me/523334827892?text=' + encodeURIComponent(msg);
+      }
+      } catch (e) { cards.forEach(function (c) { c.hidden = false; }); }
+    }
+
+    function bind(tabs, attr, set) {
+      tabs.forEach(function (t) {
+        t.addEventListener('click', function () {
+          set(t.getAttribute(attr));
+          tabs.forEach(function (x) {
+            var on = x === t;
+            x.classList.toggle('is-on', on);
+            x.setAttribute('aria-pressed', on ? 'true' : 'false');
+          });
+          apply();
+        });
+      });
+    }
+    bind(opTabs, 'data-filter', function (v) { op = v; });
+    bind(typeTabs, 'data-type', function (v) { type = v; });
+    q.addEventListener('input', apply);
+  })();
+</script>
 </body>
 </html>
