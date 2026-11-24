@@ -685,7 +685,9 @@
   },
   {"@type": "Question", "name": "¿Dónde está la oficina de Century 21 Continental en Guadalajara?", "acceptedAnswer": {"@type": "Answer", "text": "La oficina de Century 21 Continental donde trabaja Liz Cárdenas está en Av. Paseo de la Arboleda 886-A, colonia Jardines del Bosque, Guadalajara, Jalisco, C.P. 44520. Para visitas o citas, escríbele antes por WhatsApp al 333 482 7892."}},
   {"@type": "Question", "name": "¿Century 21 Continental tiene casas y departamentos en renta?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Liz Cárdenas ofrece casas y departamentos en renta en Guadalajara, Zapopan, Tlaquepaque y Tlajomulco, y también ayuda a propietarios a rentar su inmueble con filtro de inquilinos y asesoría en el contrato de arrendamiento."}},
-  {"@type": "Question", "name": "¿Liz Cárdenas está afiliada a alguna asociación inmobiliaria?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Liz Cárdenas está afiliada a la Asociación Mexicana de Profesionales Inmobiliarios (AMPI) y a la Cámara de Comercio de Guadalajara, además de trabajar con el respaldo de la red Century 21."}}
+  {"@type": "Question", "name": "¿Liz Cárdenas está afiliada a alguna asociación inmobiliaria?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Liz Cárdenas está afiliada a la Asociación Mexicana de Profesionales Inmobiliarios (AMPI) y a la Cámara de Comercio de Guadalajara, además de trabajar con el respaldo de la red Century 21."}},
+  {"@type": "Question", "name": "¿Cómo calcular el aumento de renta con el INPC?", "acceptedAnswer": {"@type": "Answer", "text": "Multiplica la renta actual por el INPC del mes de renovación dividido entre el INPC del mismo mes del año anterior. Con la inflación anual de octubre de 2026 (3.75%), una renta de $15,000 sube a $15,562.50."}},
+  {"@type": "Question", "name": "¿Cuánto puede subir la renta en Jalisco?", "acceptedAnswer": {"@type": "Answer", "text": "En Jalisco el aumento es el que se pacte en el contrato de arrendamiento; lo más común es ligarlo al INPC. En marzo de 2026 una comisión del Congreso de Jalisco aprobó una reforma al artículo 2041 del Código Civil para limitar el aumento a la inflación al renovar, por lo que conviene revisar si ya está vigente."}}
  ]
 }
 </script>
@@ -2080,6 +2082,64 @@
   </div>
 </section>
 
+<section class="section" id="aumento-renta-inpc" style="background: var(--cream);">
+  <div class="section-inner" style="max-width:760px;">
+    <p class="section-kicker">Guía para propietarios e inquilinos</p>
+    <h2 class="section-title" style="font-size:1.5rem;">¿Cómo calcular el aumento de renta con el INPC en 2026?</h2>
+    <p style="font-size:1rem;line-height:1.8;color:var(--text-dark);"><strong>Respuesta corta:</strong> multiplica tu renta actual por la inflación anual del INPC que publica el INEGI. Con la inflación de <strong>octubre de 2026 (3.75%)</strong>, una renta de <strong>$15,000</strong> sube a <strong>$15,562.50</strong>, es decir, <strong>$562.50 más al mes</strong>.</p>
+    <div style="background:var(--white);border-left:4px solid var(--gold);padding:1rem 1.3rem;margin:1.2rem 0;font-size:1rem;line-height:1.8;">
+      <strong>Fórmula:</strong> Renta nueva = Renta actual × (INPC del mes de renovación ÷ INPC del mismo mes del año anterior)<br>
+      <strong>Forma rápida:</strong> Renta nueva = Renta actual × (1 + inflación anual ÷ 100)
+    </div>
+    <div id="calc-inpc" style="background:var(--white);padding:1.3rem;border:1px solid #e3ddd0;margin:1.2rem 0;">
+      <p style="font-weight:700;margin:0 0 .8rem;">Calculadora de aumento de renta</p>
+      <label style="display:block;margin-bottom:.7rem;">Renta mensual actual ($)<br><input id="ri-renta" type="number" inputmode="decimal" value="15000" style="width:100%;padding:.6rem;font-size:1rem;border:1px solid #ccc;"></label>
+      <label style="display:block;margin-bottom:.7rem;">Inflación anual INPC (%)<br><input id="ri-inf" type="number" inputmode="decimal" step="0.01" value="3.75" style="width:100%;padding:.6rem;font-size:1rem;border:1px solid #ccc;"></label>
+      <p style="font-size:.9rem;margin:.2rem 0 .7rem;color:#555;">¿Tienes los índices? Escríbelos y se calcula la inflación sola:</p>
+      <div style="display:flex;gap:.6rem;flex-wrap:wrap;">
+        <label style="flex:1;min-width:140px;">INPC año anterior<br><input id="ri-ini" type="number" step="0.001" placeholder="ej. 141.712" style="width:100%;padding:.6rem;font-size:1rem;border:1px solid #ccc;"></label>
+        <label style="flex:1;min-width:140px;">INPC actual<br><input id="ri-fin" type="number" step="0.001" placeholder="ej. 147.026" style="width:100%;padding:.6rem;font-size:1rem;border:1px solid #ccc;"></label>
+      </div>
+      <p id="ri-out" style="font-size:1.1rem;line-height:1.7;margin:1rem 0 0;"></p>
+    </div>
+    <h3 style="font-size:1.15rem;margin-top:1.6rem;">Ejemplos con inflación de 3.75%</h3>
+    <table style="width:100%;border-collapse:collapse;font-size:.98rem;margin-top:.6rem;">
+      <thead><tr style="background:var(--white);"><th style="text-align:left;padding:.5rem;border-bottom:2px solid var(--gold);">Renta actual</th><th style="text-align:left;padding:.5rem;border-bottom:2px solid var(--gold);">Aumento</th><th style="text-align:left;padding:.5rem;border-bottom:2px solid var(--gold);">Renta nueva</th></tr></thead>
+      <tbody>
+        <tr><td style="padding:.5rem;border-bottom:1px solid #ddd;">$8,000</td><td style="padding:.5rem;border-bottom:1px solid #ddd;">$300</td><td style="padding:.5rem;border-bottom:1px solid #ddd;">$8,300</td></tr>
+        <tr><td style="padding:.5rem;border-bottom:1px solid #ddd;">$12,000</td><td style="padding:.5rem;border-bottom:1px solid #ddd;">$450</td><td style="padding:.5rem;border-bottom:1px solid #ddd;">$12,450</td></tr>
+        <tr><td style="padding:.5rem;border-bottom:1px solid #ddd;">$15,000</td><td style="padding:.5rem;border-bottom:1px solid #ddd;">$562.50</td><td style="padding:.5rem;border-bottom:1px solid #ddd;">$15,562.50</td></tr>
+        <tr><td style="padding:.5rem;border-bottom:1px solid #ddd;">$25,000</td><td style="padding:.5rem;border-bottom:1px solid #ddd;">$937.50</td><td style="padding:.5rem;border-bottom:1px solid #ddd;">$25,937.50</td></tr>
+      </tbody>
+    </table>
+    <h3 style="font-size:1.15rem;margin-top:1.6rem;">¿Cuánto puede subir la renta en Jalisco?</h3>
+    <p style="font-size:1rem;line-height:1.8;color:var(--text-dark);">En Jalisco el aumento es el que diga el contrato de arrendamiento. Por eso conviene pactarlo por escrito y ligado al INPC. En marzo de 2026 una comisión del Congreso de Jalisco aprobó una reforma al artículo 2041 del Código Civil para que la renta no suba más que la inflación al renovar; revisa si ya está vigente antes de tu renovación. En la Ciudad de México ya existe un tope: el aumento anual de vivienda no puede superar la inflación del año anterior.</p>
+    <h3 style="font-size:1.15rem;margin-top:1.6rem;">Paso a paso</h3>
+    <ol style="font-size:1rem;line-height:1.8;padding-left:1.2rem;">
+      <li>Revisa la cláusula de incremento de tu contrato: fecha de aumento y si dice "INPC".</li>
+      <li>Consulta el INPC en el sitio del INEGI: el del mes de renovación y el del mismo mes del año anterior.</li>
+      <li>Divide el índice nuevo entre el anterior y multiplica el resultado por tu renta.</li>
+      <li>Avisa el nuevo monto por escrito al menos 30 días antes y redondea a pesos.</li>
+    </ol>
+    <p style="font-size:1rem;line-height:1.8;color:var(--text-dark);">¿Vas a renovar o firmar un contrato de renta en Guadalajara o Zapopan? Liz Cárdenas te ayuda a revisarlo: <a href="https://wa.me/523334827892?text=Hola%20Liz%2C%20quiero%20revisar%20el%20aumento%20de%20renta%20de%20mi%20contrato" target="_blank" rel="noopener" style="color:var(--gold-dark);font-weight:700;">escríbele por WhatsApp al 333 482 7892</a>.</p>
+  </div>
+</section>
+<script>
+(function(){
+  function g(id){return document.getElementById(id);}
+  function f(n){return n.toLocaleString('es-MX',{style:'currency',currency:'MXN',minimumFractionDigits:2});}
+  function calc(){
+    var r=parseFloat(g('ri-renta').value)||0, i=parseFloat(g('ri-inf').value)||0;
+    var a=parseFloat(g('ri-ini').value), b=parseFloat(g('ri-fin').value);
+    if(a>0&&b>0){i=(b/a-1)*100;}
+    var nueva=r*(1+i/100);
+    g('ri-out').innerHTML='Inflación aplicada: <strong>'+i.toFixed(2)+'%</strong><br>Aumento mensual: <strong>'+f(nueva-r)+'</strong><br>Renta nueva: <strong>'+f(nueva)+'</strong>';
+  }
+  ['ri-renta','ri-inf','ri-ini','ri-fin'].forEach(function(id){g(id).addEventListener('input',calc);});
+  calc();
+})();
+</script>
+
 <!-- ENLACES UTILES -->
 <section class="section" id="noticias" style="background: var(--white);">
   <div class="section-inner" style="max-width:760px;">
@@ -2118,6 +2178,7 @@
       <li style="margin-bottom:10px;"><a href="https://micuenta.infonavit.org.mx/" target="_blank" rel="noopener" style="color:var(--gold-dark);font-weight:700;">Mi Cuenta Infonavit</a> — consulta tus puntos y cuánto te presta Infonavit.</li>
       <li style="margin-bottom:10px;"><a href="https://www.gob.mx/fovissste" target="_blank" rel="noopener" style="color:var(--gold-dark);font-weight:700;">Fovissste</a> — créditos de vivienda para trabajadores del Estado.</li>
       <li style="margin-bottom:10px;"><a href="https://www.sat.gob.mx/" target="_blank" rel="noopener" style="color:var(--gold-dark);font-weight:700;">SAT</a> — RFC, constancia de situación fiscal e ISR por venta de inmuebles.</li>
+      <li style="margin-bottom:10px;"><a href="https://www.inegi.org.mx/temas/inpc/" target="_blank" rel="noopener" style="color:var(--gold-dark);font-weight:700;">INPC (INEGI)</a> — índice de inflación para calcular el aumento anual de la renta.</li>
       <li style="margin-bottom:10px;"><a href="https://www.inegi.org.mx/temas/uma/" target="_blank" rel="noopener" style="color:var(--gold-dark);font-weight:700;">UMA 2026 (INEGI)</a> — valor de la UMA, base del límite de efectivo en compraventas.</li>
       <li style="margin-bottom:10px;"><a href="https://www.gob.mx/profeco" target="_blank" rel="noopener" style="color:var(--gold-dark);font-weight:700;">Profeco</a> — contratos de adhesión y quejas en compra de vivienda nueva.</li>
     </ul>
